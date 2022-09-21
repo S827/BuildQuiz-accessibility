@@ -13,24 +13,80 @@
         <h1>HTML/CSS Quiz</h1>
         <nav>
             <ul>
-                <li><a>INFO</a></li>
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
+                <li><a accesskey="i" href="#student-info">INFO</a></li>
+                <li><a accesskey="h" href="#html-questions">HTML</a></li>
+                <li><a accesskey="c" href="#css-questions">CSS</a></li>
             </ul>
         </nav>
       </header>
     <main>
         <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
             <section role="region" aria-labelledby="student-info">
-                <h2 id="student-info">Name</h2>
+                <h2 id="student-info">Student Info</h2>
+                <div class="info">
+                  <label for="student-name">Name:</label><input id="student-name" type="text" name="student-name" />
+                </div>
+                <div class="info">
+                  <label for="student-email">Email:</label><input id="student-email" type="email" name="student-email" />
+                </div>
+                <div class="info">
+                  <label for="birth-date">DOB:<span class="sr-only">(Date of Birth)</span></label><input id="dob" type="date" name="birth-date" />
+                </div>
             </section>
             <section role="region" aria-labelledby="html-questions">
-                <h2 id="html-questions">What is a tag?</h2>
+                <h2 id="html-questions">HTML</h2>
+                <div class="question-block">
+                  <p>1</p>
+                  <fieldset class="question" name="question 1">
+                    <legend>To add paragraph we use h3 element.</legend>
+                    <ul class="answers-list">
+                      <li><label for="q1-a1"><input id="q1-a1" type="radio" value="true" name="q1"> True</label></li>
+                      <li><label for="q1-a2"><input id="q1-a2" type="radio" value="false" name="q1"> False</label></li>
+                    </ul>
+                  </fieldset>
+                </div>
+                <div class="question-block">
+                  <p>2</p>
+                  <fieldset class="question" name="question 2">
+                    <legend>#class is the slector to target elements with class</legend>
+                    <ul class="answers-list">
+                      <li><label for="q2-a1"><input id="q2-a1" type="radio" value="false" name="q2"> False</label></li>
+                      <li><label for="q2-a2"><input id="q2-a2" type="radio" value="true" name="q2"> True</label></li>
+                    </ul>
+                  </fieldset>
+                </div>
             </section>
             <section role="region" aria-labelledby="css-questions">
-                <h2 id="css-questions">How to select classes in css?</h2>
+                <h2 id="css-questions">CSS</h2>
+                <div class="formrow">
+                  <div class="question-block">
+                    <label for="customer">Are you a Frontend developer></label>
+                  </div>
+                  <div class="answer">
+                    <select id="customer" name="customer" required>
+                      <option value="">Select an option</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                  <div class="question-block">
+                    <label for="queries"> Do you have any questions?></label>
+                  </div>
+                  <div class="answer">
+                    <textarea id="queries" name="queries" rows="5" cols="10" placeholder="How to get started?"></textarea>
+                  </div>
+                </div>
             </section>
+            <button type="submit">Submit</button>
         </form>
     </main>
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+        San Francisco<br />
+        California<br />
+        USA 
+      </address>
+    </footer>
   </body>
 </html>
